@@ -1,3 +1,23 @@
+.dub
+docs.json
+__dummy.html
+docs/
+hashes
+hashes.so
+hashes.dylib
+hashes.dll
+hashes.a
+hashes.lib
+hashes-test-*
+*.exe
+*.o
+*.obj
+*.lst
+
+# Created by https://www.gitignore.io/api/d
+# Edit at https://www.gitignore.io/?templates=d
+
+### D ###
 # Compiled Object files
 *.o
 *.obj
@@ -22,3 +42,5 @@ docs/
 
 # Code coverage
 *.lst
+
+# End of https://www.gitignore.io/api/d

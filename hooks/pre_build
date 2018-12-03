@@ -1,0 +1,4 @@
+#!/bin/bash
+
+docker run --rm -v "$(pwd)":/src dlang2/ldc-ubuntu \
+    dub build -v --root /src -c release

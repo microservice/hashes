@@ -1,0 +1,4 @@
+language: node_js
+script:
+  - npm install -g omg-cli
+  - omg exec digest -i hashes -a method=sha1 -a data=foo

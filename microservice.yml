@@ -1,0 +1,80 @@
+omg: 1
+lifecycle:
+  startup:
+    command: ["/hashes"]
+actions:
+  digest:
+    http:
+      path: /digest
+      method: post
+      port: 8080
+    arguments:
+      method:
+        type: string
+        required: true
+        in: requestBody
+        #enum:
+          #- md5
+          #- sha1
+          #- sha224
+          #- sha256
+          #- sha384
+          #- sha512-224
+          #- sha512-256
+          #- crc32
+          #- crc64ecma
+          #- crc64iso
+          #- murmurhash3-32
+          #- murmurhash3-64
+          #- adler32
+          #- ripemd160
+          #- default
+      data:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: map
+      contentType: application/json
+      properties:
+        method:
+          type: string
+        digest:
+          type: string
+  hmac:
+    http:
+      path: /hmac
+      method: post
+      port: 8080
+    arguments:
+      method:
+        type: string
+        required: true
+        #enum:
+          #- md5
+          #- sha1
+          #- sha224
+          #- sha256
+          #- sha384
+          #- sha512-224
+          #- sha512-256
+          #- murmurhash3-32
+          #- murmurhash3-64
+          #- ripemd160
+        in: requestBody
+      data:
+        type: string
+        required: true
+        in: requestBody
+      secret:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: map
+      contentType: application/json
+      properties:
+        method:
+          type: string
+        digest:
+          type: string
