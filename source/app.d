@@ -74,7 +74,7 @@ class EncodeService {
 
     private auto digestHmac(string method, const(ubyte)[] data, const(ubyte)[] secret) {
         import std.conv : text;
-        import std.digest : hexDigest;
+        import std.digest : hexDigest, toHexString;
         import std.digest.crc : CRC32, CRC64ECMA, CRC64ISO;
         import std.digest.hmac : hmac;
         import std.digest.md : MD5;
