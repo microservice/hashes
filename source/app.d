@@ -78,6 +78,7 @@ class EncodeService {
         const method = request.json["method"].get!string;
         auto result = Json(["method": Json(method)]);
         result["digest"] = digest(method, data);
+        result["success"] = true;
         return result;
     }
 
@@ -130,6 +131,7 @@ class EncodeService {
         const method = request.json["method"].get!string;
         auto result = Json(["method": Json(method)]);
         result["digest"] = digestHmac(method, data.representation, secret.representation);
+        result["success"] = true;
         return result;
     }
 }
