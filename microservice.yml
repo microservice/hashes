@@ -10,30 +10,30 @@ actions:
       port: 8080
     arguments:
       method:
-        type: string
+        type: enum
         required: true
         in: requestBody
-        #enum:
-          #- md5
-          #- sha1
-          #- sha224
-          #- sha256
-          #- sha384
-          #- sha512-224
-          #- sha512-256
-          #- crc32
-          #- crc64ecma
-          #- crc64iso
-          #- murmurhash3-32
-          #- murmurhash3-64
-          #- adler32
-          #- ripemd160
+        enum:
+          - md5
+          - sha1
+          - sha224
+          - sha256
+          - sha384
+          - sha512-224
+          - sha512-256
+          - crc32
+          - crc64ecma
+          - crc64iso
+          - murmurhash3-32
+          - murmurhash3-64
+          - adler32
+          - ripemd160
       data:
         type: string
         required: true
         in: requestBody
     output:
-      type: map
+      type: object
       contentType: application/json
       properties:
         method:
@@ -47,19 +47,19 @@ actions:
       port: 8080
     arguments:
       method:
-        type: string
+        type: enum
         required: true
-        #enum:
-          #- md5
-          #- sha1
-          #- sha224
-          #- sha256
-          #- sha384
-          #- sha512-224
-          #- sha512-256
-          #- murmurhash3-32
-          #- murmurhash3-64
-          #- ripemd160
+        enum:
+          - md5
+          - sha1
+          - sha224
+          - sha256
+          - sha384
+          - sha512-224
+          - sha512-256
+          - murmurhash3-32
+          - murmurhash3-64
+          - ripemd160
         in: requestBody
       data:
         type: string
