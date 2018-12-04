@@ -2,24 +2,24 @@ import vibe.vibe;
 
 void main()
 {
-	auto settings = new HTTPServerSettings;
-	settings.port = 8080;
-	settings.bindAddresses = ["0.0.0.0"];
+    auto settings = new HTTPServerSettings;
+    settings.port = 8080;
+    settings.bindAddresses = ["0.0.0.0"];
     settings.errorPageHandler = (HTTPServerRequest req,
-	HTTPServerResponse res,
-	HTTPServerErrorInfo error) {
-	    Json errorResponse = Json([
-	        "success": Json(false),
-	        "message": Json(error.message)
-	    ]);
-	    logInfo(error.debugMessage);
+    HTTPServerResponse res,
+    HTTPServerErrorInfo error) {
+        Json errorResponse = Json([
+            "success": Json(false),
+            "message": Json(error.message)
+        ]);
+        logInfo(error.debugMessage);
         res.writeJsonBody(errorResponse, error.code);
-	};
-	auto router = new URLRouter;
+    };
+    auto router = new URLRouter;
     router.registerWebInterface(new EncodeService);
-	listenHTTP(settings, router);
+    listenHTTP(settings, router);
 
-	runApplication();
+    runApplication();
 }
 
 class EncodeService {
