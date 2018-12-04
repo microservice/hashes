@@ -28,7 +28,6 @@ actions:
           #- murmurhash3-64
           #- adler32
           #- ripemd160
-          #- default
       data:
         type: string
         required: true
@@ -71,7 +70,7 @@ actions:
         required: true
         in: requestBody
     output:
-      type: map
+      type: object
       contentType: application/json
       properties:
         method:

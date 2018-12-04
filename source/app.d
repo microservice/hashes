@@ -54,8 +54,6 @@ class EncodeService {
                 return adler32(1, data).text;
             case "ripemd160":
                 return hexDigest!RIPEMD160(data).text;
-            case "default":
-                return data.hashOf.text;
             default:
                 return "Unknown hash method selected.";
         }
