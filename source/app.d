@@ -5,6 +5,16 @@ void main()
 	auto settings = new HTTPServerSettings;
 	settings.port = 8080;
 	settings.bindAddresses = ["0.0.0.0"];
+    settings.errorPageHandler = (HTTPServerRequest req,
+	HTTPServerResponse res,
+	HTTPServerErrorInfo error) {
+	    Json errorResponse = Json([
+	        "success": Json(false),
+	        "message": Json(error.message)
+	    ]);
+	    logInfo(error.debugMessage);
+        res.writeJsonBody(errorResponse, error.code);
+	};
 	auto router = new URLRouter;
     router.registerWebInterface(new EncodeService);
 	listenHTTP(settings, router);
@@ -55,7 +65,8 @@ class EncodeService {
             case "ripemd160":
                 return hexDigest!RIPEMD160(data).text;
             default:
-                return "Unknown hash method selected.";
+                enforceBadRequest(0, "Unknown method `"~method~"` selected.");
+                assert(0);
         }
     }
 
@@ -104,7 +115,8 @@ class EncodeService {
             case "ripemd160":
                 return hmac!RIPEMD160(data, secret).toHexString.text;
             default:
-                return "Unknown hash method selected.";
+                enforceBadRequest(0, "Unknown method `"~method~"` selected.");
+                assert(0);
         }
     }
 
