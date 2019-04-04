@@ -1,4 +1,11 @@
 omg: 1
+info:
+  version: 0.1.0
+  title: Hashes
+  description: Digest and hashing capabilities
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
 lifecycle:
   startup:
     command: ["/hashes"]
@@ -10,24 +17,9 @@ actions:
       port: 8080
     arguments:
       method:
-        type: enum
+        type: string
         required: true
         in: requestBody
-        enum:
-          - md5
-          - sha1
-          - sha224
-          - sha256
-          - sha384
-          - sha512-224
-          - sha512-256
-          - crc32
-          - crc64ecma
-          - crc64iso
-          - murmurhash3-32
-          - murmurhash3-64
-          - adler32
-          - ripemd160
       data:
         type: string
         required: true
@@ -47,19 +39,8 @@ actions:
       port: 8080
     arguments:
       method:
-        type: enum
+        type: string
         required: true
-        enum:
-          - md5
-          - sha1
-          - sha224
-          - sha256
-          - sha384
-          - sha512-224
-          - sha512-256
-          - murmurhash3-32
-          - murmurhash3-64
-          - ripemd160
         in: requestBody
       data:
         type: string
