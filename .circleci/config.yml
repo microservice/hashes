@@ -19,4 +19,4 @@ jobs:
             echo "[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"" >> $BASH_ENV
       - run: npm i omg
       - run: ./hooks/pre_build
-      - run: npx omg exec digest -a method=sha1 -a data=foo
+      - run: npx omg run digest -a method=sha1 -a data=foo
