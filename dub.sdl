@@ -3,7 +3,7 @@ description "Encode and decode hashes."
 authors "Asyncy"
 copyright "Copyright © 2018, Asyncy"
 license "MIT"
-dependency "vibe-d" version="~>0.8.4"
+dependency "vibe-d" version="~>0.8.5"
 
 configuration "release" {
 	targetType "executable"
