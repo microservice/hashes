@@ -8,7 +8,4 @@ RUN dub build -b release
 
 FROM busybox
 COPY --from=builder /src/hashes /hashes
-RUN chmod +x /hashes
-WORKDIR /src
-EXPOSE 8080
 ENTRYPOINT [ "/hashes" ]
