@@ -1,4 +1,15 @@
 language: node_js
+node_js:
+  - "11"
+
+services:
+  - docker
+
+before_install:
+  - npm i omg
+
 script:
-  - npm install -g omg-cli
-  - omg exec digest -i hashes -a method=sha1 -a data=foo
+  - npx omg build
+  - |
+    output="$(npx omg run digest -a method=sha1 -a data=foo)"
+    if [ "$output" != '{"method":"sha1","digest":"0BEEC7B5EA3F0FDBC95D0DD47F3C5BC275DA8A33"}' ] ; then echo "$output"; exit 1; fi
