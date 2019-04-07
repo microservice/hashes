@@ -8,7 +8,7 @@ info:
     url: https://opensource.org/licenses/MIT
 lifecycle:
   startup:
-    command: ["/hashes"]
+    command: []
 actions:
   digest:
     http:

@@ -1,7 +1,8 @@
 FROM dlang2/ldc-ubuntu as builder
 WORKDIR /src
 COPY dub.sdl dub.selections.json /src/
-RUN mkdir /src/source && echo 'void main(){}' > /src/source/app.d && dub && rm -rf /src/source
+# do a first build without sources to fetch and build all dependencies
+RUN dub build -c release
 COPY source /src/source
 RUN dub build -v --root /src -c release
 
