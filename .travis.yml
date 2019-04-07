@@ -11,5 +11,5 @@ before_install:
 script:
   - npx omg build
   - |
-    output="$(npx omg run --raw digest -a method=sha1 -a data=foo)"
+    output="$(npx omg run --raw digest -a method=sha1 -a data=foo | jq -c .)"
     if [ "$output" != '{"method":"sha1","digest":"0BEEC7B5EA3F0FDBC95D0DD47F3C5BC275DA8A33"}' ] ; then echo "$output"; exit 1; fi
