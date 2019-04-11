@@ -1,7 +1,7 @@
 Hashes
 =======
 
-[![Build status](https://img.shields.io/travis/com/microservice/hashes/master.svg?style=for-the-badge)](https://travis-ci.com/microservice/hashes)
+[![Build status](https://img.shields.io/travis/microservice/hashes/master.svg?style=for-the-badge)](https://travis-ci.org/microservice/hashes)
 
 This OMG service provides various digest and hashing capabilities.
 
