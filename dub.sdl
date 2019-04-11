@@ -1,0 +1,10 @@
+name "hashes"
+description "Encode and decode hashes."
+authors "Asyncy"
+copyright "Copyright © 2018, Asyncy"
+license "MIT"
+dependency "vibe-d" version="~>0.8.5"
+
+buildType "release" {
+	dflags "-flto=full" "-linker=gold" "-O5" "-static" platform="posix-ldc"
+}

@@ -1,0 +1,60 @@
+omg: 1
+info:
+  version: 0.1.0
+  title: Hashes
+  description: Digest and hashing capabilities
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+lifecycle:
+  startup:
+    command: []
+actions:
+  digest:
+    http:
+      path: /digest
+      method: post
+      port: 8080
+    arguments:
+      method:
+        type: string
+        required: true
+        in: requestBody
+      data:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: object
+      contentType: application/json
+      properties:
+        method:
+          type: string
+        digest:
+          type: string
+  hmac:
+    http:
+      path: /hmac
+      method: post
+      port: 8080
+    arguments:
+      method:
+        type: string
+        required: true
+        in: requestBody
+      data:
+        type: string
+        required: true
+        in: requestBody
+      secret:
+        type: string
+        required: true
+        in: requestBody
+    output:
+      type: object
+      contentType: application/json
+      properties:
+        method:
+          type: string
+        digest:
+          type: string
