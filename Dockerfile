@@ -6,6 +6,6 @@ RUN dub build -b release || true
 COPY source /src/source
 RUN dub build -b release
 
-FROM busybox
+FROM scratch
 COPY --from=builder /src/hashes /hashes
 ENTRYPOINT [ "/hashes" ]
