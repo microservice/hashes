@@ -12,6 +12,7 @@ Usage
 # Storyscript
 digest = hashes digest method: "sha1" data: "hello world"
 # {"method":"sha1","digest":"2AAE6C35C94FCFB415DBE95F408B9CE91EE846ED"}
+```
 
 ```coffee
 # Storyscript
