@@ -1,7 +1,7 @@
 # _Hashes_ OMG Microservice
 
 [![Open Microservice Guide](https://img.shields.io/badge/OMG%20Enabled-👍-green.svg?)](https://microservice.guide)
-<!-- [![Build status](https://img.shields.io/travis/microservice/hashes/master.svg?style=for-the-badge)](https://travis-ci.org/microservice/hashes) -->
+[![Build Status](https://travis-ci.org/omg-services/hashes.svg?branch=master)](https://travis-ci.org/omg-services/hashes)
 
 This OMG service provides various digest and hashing capabilities.
 
