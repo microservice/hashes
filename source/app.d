@@ -14,6 +14,9 @@ void main()
     };
     auto router = new URLRouter;
     router.registerWebInterface(new EncodeService);
+    router.get("/health", (req, res) {
+        res.writeBody("OK");
+    });
     listenHTTP(settings, router);
 
     runApplication();
