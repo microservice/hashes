@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-  - "11"
+  - '12'
 
 services:
   - docker
 
 before_install:
-  - npm i omg
+  - npm i @microservices/oms
 
 script:
-  - npx omg build
+  - npx oms build
   - |
-    output="$(npx omg run --raw digest -a method=sha1 -a data=foo | jq -c .)"
+    output="$(npx oms run --silent digest -a method=sha1 -a data=foo | jq -c .)"
     if [ "$output" != '{"method":"sha1","digest":"0BEEC7B5EA3F0FDBC95D0DD47F3C5BC275DA8A33"}' ] ; then echo "$output"; exit 1; fi
