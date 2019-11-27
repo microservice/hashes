@@ -1,11 +1,15 @@
-omg: 1
+oms: 1
 info:
   version: 0.1.0
   title: Hashes
   description: Digest and hashing capabilities
   license:
     name: MIT
-    url: https://opensource.org/licenses/MIT
+    url: 'https://opensource.org/licenses/MIT'
+  contact:
+    name: Open Microservices
+    url: 'https://openmicroservices.org'
+    email: core@openmicroservices.org
 lifecycle:
   startup:
     command: []
