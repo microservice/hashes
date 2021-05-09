@@ -1,4 +1,4 @@
-FROM dlang2/ldc-ubuntu:1.19.0 as builder
+FROM dlang2/ldc-ubuntu:1.26.0 as builder
 WORKDIR /src
 COPY dub.sdl dub.selections.json /src/
 # do a first build without sources to fetch and build all dependencies
